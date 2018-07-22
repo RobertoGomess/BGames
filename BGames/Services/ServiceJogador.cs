@@ -2,7 +2,7 @@
 using BGames.Entiteis;
 using BGames.Interfaces.Repositories;
 using BGames.Interfaces.Services;
-using BGames.Resorces;
+using BGames.Domain.Resorces;
 using BGames.ValuesObjets;
 using prmToolkit.NotificationPattern;
 using prmToolkit.NotificationPattern.Extensions;

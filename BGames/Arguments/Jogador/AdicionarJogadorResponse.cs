@@ -1,6 +1,6 @@
 ﻿using BGames.Entiteis;
 using BGames.Interfaces.Arguments;
-using BGames.Resorces;
+using BGames.Domain.Resorces;
 using System;
 
 namespace BGames.Interfaces.Services
@@ -15,7 +15,7 @@ namespace BGames.Interfaces.Services
             return new AdicionarJogadorResponse()
             {
                 Id = v.Id,
-                Message = BGames.Resorces.Message.OPERACAO_REALIZADA_COM_SUCESSO
+                Message = BGames.Domain.Resorces.Message.OPERACAO_REALIZADA_COM_SUCESSO
             };
             
         }

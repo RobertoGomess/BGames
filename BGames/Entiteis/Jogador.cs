@@ -1,6 +1,6 @@
 ﻿using BGames.Enum;
 using BGames.Extensions;
-using BGames.Resorces;
+using BGames.Domain.Resorces;
 using BGames.ValuesObjets;
 using prmToolkit.NotificationPattern;
 using prmToolkit.NotificationPattern.Extensions;

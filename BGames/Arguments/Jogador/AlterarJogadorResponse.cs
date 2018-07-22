@@ -19,7 +19,7 @@ namespace BGames.Interfaces.Services
                 Id = jogador.Id,
                 PrimeiroNome = jogador.Nome.PrimeiroNome,
                 UltimoNome = jogador.Nome.UltimoNome,
-                Message = Resorces.Message.OPERACAO_REALIZADA_COM_SUCESSO
+                Message = Domain.Resorces.Message.OPERACAO_REALIZADA_COM_SUCESSO
             };
         }
     }

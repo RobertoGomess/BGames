@@ -1,4 +1,4 @@
-﻿using BGames.Resorces;
+﻿using BGames.Domain.Resorces;
 using prmToolkit.NotificationPattern;
 using prmToolkit.NotificationPattern.Extensions;
 

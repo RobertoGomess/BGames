@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BGames.Resorces {
+namespace BGames.Domain.Resorces {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace BGames.Resorces {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BGames.Resorces.Message", typeof(Message).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BGames.Domain.Resorces.Message", typeof(Message).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

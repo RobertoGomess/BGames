@@ -7,8 +7,8 @@
     <ProjectGuid>{253B581B-FD5C-49F6-9AEF-EA53F85F2982}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BGames</RootNamespace>
-    <AssemblyName>BGames</AssemblyName>
+    <RootNamespace>BGames.Domain</RootNamespace>
+    <AssemblyName>BGames.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
