@@ -6,6 +6,10 @@ namespace BGames.ValuesObjets
 {
     public class Nome : Notifiable
     {
+        public Nome()
+        {
+
+        }
         public Nome(string primeiroNome, string ultimoNome)
         {
             PrimeiroNome = primeiroNome;

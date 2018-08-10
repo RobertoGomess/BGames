@@ -37,12 +37,14 @@ namespace BGames.Services
 
             Jogador jogador = new Jogador(nome, email, request.Senha);
 
+            AddNotifications(nome, email);
+
             if (this.IsInvalid())
             {
                 return null;    
             }
 
-            jogador = _repositoryJogador.AdicionarJogador(jogador);
+            jogador = _repositoryJogador.Adicionar(jogador);
 
             return (AdicionarJogadorResponse)jogador;
         }
@@ -54,7 +56,7 @@ namespace BGames.Services
                 AddNotification("AlterarJogadorRequest", Message.X0_E_OBRIGATORIO.ToFormat("AlterarJogadorRequest"));
             }
 
-            Jogador jogador = _repositoryJogador.ObterJogadorPorId(request.Id);
+            Jogador jogador = _repositoryJogador.ObterPorId(request.Id);
 
             if (jogador == null)
             {
@@ -74,7 +76,7 @@ namespace BGames.Services
                 return null;
             }
 
-            _repositoryJogador.AlterarJogador(jogador);
+            _repositoryJogador.Editar(jogador);
 
             return (AlterarJogadorResponse)jogador;
         }
@@ -96,14 +98,14 @@ namespace BGames.Services
                 return null;
             }
 
-            jogador = _repositoryJogador.AutenticarJogador(jogador.Email.Endereco , jogador.Senha);
+            jogador = _repositoryJogador.ObterPor( x=> x.Email.Endereco == jogador.Email.Endereco && x.Senha == jogador.Senha);
 
             return (AutenticarJogadorResponse)jogador;
         }
 
         public IEnumerable<JogadorResponse> ListarJogador()
         {
-            return _repositoryJogador.ListarJogador().ToList().Select(jogador => (JogadorResponse)jogador).ToList();
+            return _repositoryJogador.Listar().ToList().Select(jogador => (JogadorResponse)jogador).ToList();
         }
     }
 }

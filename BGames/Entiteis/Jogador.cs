@@ -5,11 +5,16 @@ using BGames.ValuesObjets;
 using prmToolkit.NotificationPattern;
 using prmToolkit.NotificationPattern.Extensions;
 using System;
+using BGames.Domain.Entiteis.Base;
 
 namespace BGames.Entiteis
 {
-    public class Jogador : Notifiable
+    public class Jogador : EntityBase
     {
+        public Jogador()
+        {
+
+        }
         public Jogador(Email email, string senha)
         {
             Email = email;
@@ -18,6 +23,10 @@ namespace BGames.Entiteis
             new AddNotifications<Jogador>(this)
                 .IfNullOrInvalidLength(x => x.Senha, 6, 32,"A senha deve ter entre 6 e 32 caracteres");
 
+            if (IsInvalid())
+            {
+                Senha = Senha.ConvertToMD5();
+            }
         }
 
         public Jogador(Nome nome, Email email, string senha)
@@ -25,7 +34,6 @@ namespace BGames.Entiteis
             Nome = nome;
             Email = email;
             Senha = senha;
-            Id = Guid.NewGuid();
             Status = Enum.EnumSituacaoJogador.EmAnalise;
 
             new AddNotifications<Jogador>(this)
@@ -51,7 +59,6 @@ namespace BGames.Entiteis
             AddNotifications(nome, email);
         }
 
-        public Guid Id { get; private set; }
         public Nome Nome { get; private set; }
         public Email Email { get; private set; }
         public string Senha { get; private set; }

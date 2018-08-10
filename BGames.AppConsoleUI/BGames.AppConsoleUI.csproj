@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A95FC711-2EDC-4FD3-AD88-4CCEDB681ED3}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BGames.Infra</RootNamespace>
-    <AssemblyName>BGames.Infra</AssemblyName>
+    <ProjectGuid>{8529E989-520D-4410-A1BA-B8B71FAB05D6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>BGames.AppConsoleUI</RootNamespace>
+    <AssemblyName>BGames.AppConsoleUI</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -36,7 +38,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
     <Reference Include="prmToolkit.NotificationPattern, Version=1.0.19.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\prmToolkit.NotificationPattern.1.0.20\lib\netstandard2.0\prmToolkit.NotificationPattern.dll</HintPath>
     </Reference>
@@ -51,42 +52,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201807280402180_Mapeando_Plataforma.cs" />
-    <Compile Include="Migrations\201807280402180_Mapeando_Plataforma.Designer.cs">
-      <DependentUpon>201807280402180_Mapeando_Plataforma.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Persistence\BGamesContext.cs" />
-    <Compile Include="Migrations\201807280148213_CriandoBanco.cs" />
-    <Compile Include="Migrations\201807280148213_CriandoBanco.Designer.cs">
-      <DependentUpon>201807280148213_CriandoBanco.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Persistence\Map\MapPlataforma.cs" />
-    <Compile Include="Persistence\Map\MapJogador.cs" />
-    <Compile Include="Persistence\Repositories\Base\RepositoryBase.cs" />
-    <Compile Include="Persistence\Repositories\RepositoryJogador.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Transactions\IUnitOfWork.cs" />
-    <Compile Include="Transactions\UnitOfWork.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BGames.Infra\BGames.Infra.csproj">
+      <Project>{A95FC711-2EDC-4FD3-AD88-4CCEDB681ED3}</Project>
+      <Name>BGames.Infra</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BGames\BGames.Domain.csproj">
       <Project>{253B581B-FD5C-49F6-9AEF-EA53F85F2982}</Project>
       <Name>BGames.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807280148213_CriandoBanco.resx">
-      <DependentUpon>201807280148213_CriandoBanco.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807280402180_Mapeando_Plataforma.resx">
-      <DependentUpon>201807280402180_Mapeando_Plataforma.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

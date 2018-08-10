@@ -7,6 +7,10 @@ namespace BGames.ValuesObjets
 {
     public class Email : Notifiable
     {
+        public Email()
+        {
+
+        }
         public Email(string endereco)
         {
             Endereco = endereco;

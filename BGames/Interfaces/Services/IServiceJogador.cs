@@ -1,9 +1,10 @@
 ﻿using BGames.Arguments.Jogador;
+using BGames.Domain.Interfaces.Services.Base;
 using System.Collections.Generic;
 
 namespace BGames.Interfaces.Services
 {
-    public interface IServiceJogador
+    public interface IServiceJogador : IServiceBase
     {
         AutenticarJogadorResponse AutenticarJogador(AutenticarJogadorRequest request);
 
